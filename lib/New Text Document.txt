@@ -1,0 +1,96 @@
+95
+$IP from Iproute2, a collection of utilities for controlling TCP/IP networking and traffic control in Linux.
+$LS list directory contents.
+$DF display disk space usage.
+$DU estimate file space usage.
+$FREE display memory usage.
+$SCP securely Copy Files Using SCP, with examples.
+$FIND locates files based on some user-specified criteria.
+$NCDU a disk utility for Unix systems.
+$PSTREE display a tree of processes.
+$LAST show a listing of last logged-in users.
+$W show a list of currently logged-in user sessions.
+$GREP Search a file for a pattern of characters, then display all matching lines.
+$UPTIME shows system uptime and load average.
+$TOP shows an overall system view.
+$VMSTAT shows system memory, processes, interrupts, paging, block I/O, and CPU info.
+$HTOP interactive process viewer and manager.
+$DSTAT view processes, memory, paging, I/O, CPU, etc., in real-time. All-in-one for vmstat, iostat, netstat, and ifstat.
+$IFTOP network traffic viewer.
+$NETHOGS network traffic analyzer.
+$IOTOP interactive I/O viewer. Get an overview of storage r/w activity.
+$IOSTAT for storage I/O statistics.
+$NETSTAT for network statistics.
+$SS utility to investigate sockets.
+$ATOP For Linux server performance analysis.
+$GLANCES htop Alternatives:
+$SSH secure command-line access to remote Linux systems.
+$SUDO execute commands with administrative privilege.
+$CD directory navigation.
+$PWD shows your current directory location.
+$CP copying files and folders.
+$MV moving files and folders.
+$RM removing files and folders.
+$MKDIR create or make new directories.
+$TOUCH used to update the access date and modification date of a computer file or directory.
+$MAN for reading system reference manuals.
+$APROPOS Search man page names and descriptions.
+$RSYNC remote file transfers and syncing.
+$TAR an archiving utility.
+$GZIP file compression and decompression.
+$BZIP2 similar to gzip. It uses a different compression algorithm.
+$ZIP for packaging and compressing (to archive) files.
+$LOCATE search files in Linux.
+$PS information about the currently running processes.
+$CRON set up scheduled tasks to run.
+$NMCLI command-line tool for controlling NetworkManager.
+$PING send ICMP ECHO_REQUEST to network hosts.
+$TRACEROUTE check the route packets take to a specified host.
+$MTR network diagnostic tool.
+$NSLOOKUP query Internet name servers (NS) interactively.
+$HOST perform DNS lookups in Linux.
+$DIG DNS lookup utility.
+$WGET retrieve files over HTTP, HTTPS, FTP, and FTPS.
+$CURL transferring data using various network protocols. (supports more protocols than wget)
+$DD convert and copy files.
+$FDISK manipulate the disk partition table.
+$PARTED for creating and manipulating partition tables.
+$BLKID command-line utility to locate/print block device attributes.
+$MKFS build a Linux file system.
+$FSCK  tool for checking the consistency of a file system.
+$WHOIS client for the whois directory service.
+$NC command-line networking utility.
+$UMASK set file mode creation mask.
+$CHMOD change the access permissions of file system objects.
+$CHOWN change file owner and group.
+$CHROOT run command or interactive shell with a special root directory.
+$USERADD create a new user or update default new user information.
+$USERDEL used to delete a user account and all related files.
+$USERMOD used to modify or change any attributes of an existing user account.
+$VI text editor.
+$CAT display file contents.
+$TAC output file contents, in reverse.
+$MORE display file contents one screen/page at a time.
+$LESS similar to the more command with additional features.
+$TAIL used to display the tail end of a text file or piped data.
+$DMESG prints the message buffer of the kernel ring.
+$JOURNALCTL query the systemd journal.
+$KILL terminate a process.
+$KILLALL Sends a kill signal to all instances of a process by name.
+$SLEEP suspends program execution for a specified time.
+$WAIT Suspend script execution until all jobs running in the background have been terminated.
+$NOHUP Run Commands in the Background.
+$SCREEN hold a session open on a remote server. (also a full-screen window manager)
+$TMUX a terminal multiplexer.
+$PASSWD change a user password.
+$CHPASSWORD allows users to change the password for various user accounts.
+$MOUNT provides access to an entire filesystem in one directory.
+$SYSTEMCTL central management tool for controlling the init system.
+$CLEAR clears the screen of the terminal.
+$ENV Run a command in a modified environment.
+$CHEAT allows you to create and view interactive cheatsheets on the command line.�
+$TLDR Collaborative cheatsheets for console commands.
+$BTOP C++ version and continuation of bashtop and bpytop.
+$NLOAD a super simple, command-line network interface monitoring tool.
+$HISTORY used to view the previously executed commands.
+$SAR collects, reports, and saves system activity information, including CPU, memory, disk, and network usage.
