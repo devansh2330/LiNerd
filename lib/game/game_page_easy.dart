@@ -7,14 +7,14 @@ import 'package:puzzler/components/my_tile.dart';
 import 'package:puzzler/components/update_constants.dart';
 import 'package:puzzler/game/score_display.dart';
 
-class DesktopScaffold extends StatefulWidget {
-  const DesktopScaffold({Key? key}) : super(key: key);
+class GameModeEasy extends StatefulWidget {
+  const GameModeEasy({Key? key}) : super(key: key);
 
   @override
-  State<DesktopScaffold> createState() => _DesktopScaffoldState();
+  State<GameModeEasy> createState() => _GameModeEasyState();
 }
 
-class _DesktopScaffoldState extends State<DesktopScaffold> {
+class _GameModeEasyState extends State<GameModeEasy> {
   int selectedTile = -1;
   //
   //bool _puzzleCompleted = false;
@@ -40,9 +40,9 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
 
   void truncate() {}
   void hint() {
-    for (int x = 0; x < 10; x++) {
-      int i = Random().nextInt(10);
-      int j = Random().nextInt(10);
+    for (int x = 0; x < 6; x++) {
+      int i = Random().nextInt(6) + 2;
+      int j = Random().nextInt(6) + 2;
 
       if (userBoard[i][j] == generatorBoard[i][j]) {
         continue;
@@ -53,7 +53,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   }
 
   int trydown(int i, int j, String word) {
-    if ((i + word.length) > 10) {
+    if ((i + word.length) > 8) {
       return -1;
     }
     int common = 0;
@@ -72,7 +72,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   }
 
   int tryacross(int i, int j, String word) {
-    if ((j + word.length) > 10) {
+    if ((j + word.length) > 8) {
       return -1;
     }
     int common = 0;
@@ -95,6 +95,9 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
     int rowPos;
     int colPos;
     int rand = Random().nextInt(3);
+    while (words[rand].length != 6) {
+      rand = Random().nextInt(90);
+    }
     print('$rand word ${words[rand]}');
     for (int j = 0; j < words[rand].length; j++) //for i=0
     {
@@ -109,13 +112,13 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
     hintList.add(item);
     print(hintList.elementAt(0));
 
-    for (int i = 3; i < size; i++) {
+    for (int i = rand + 1; i < size; i++) {
       int maxCommon = -1;
       int maxRowPos = -1;
       int maxColPos = -1;
       String maxDirection = "";
-      for (int j = 0; j < 10; j++) {
-        for (int k = 0; k < 10; k++) {
+      for (int j = 2; j < 8; j++) {
+        for (int k = 2; k < 8; k++) {
           int temp = -1;
 
           temp = trydown(j, k, words[i]);
@@ -172,8 +175,8 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   //score analyser
 
   void scoreCalculate() {
-    for (int i = 0; i < 10; i++) {
-      for (int j = 0; j < 10; j++) {
+    for (int i = 2; i < 8; i++) {
+      for (int j = 2; j < 8; j++) {
         if (userBoard[i][j] == generatorBoard[i][j]) {
           score++;
         }
@@ -215,7 +218,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
       context,
       MaterialPageRoute(
         builder: (context) => ScoreDisplay(
-          level: 2,
+          level: 0,
         ),
       ),
     );
@@ -480,7 +483,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
                                       size: 60,
                                     ),
                                     Text(
-                                      "ADVANCED",
+                                      "BEGINNER",
                                       style: TextStyle(fontSize: 26),
                                     )
                                   ],
