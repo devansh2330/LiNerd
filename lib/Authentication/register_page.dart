@@ -29,11 +29,12 @@ class _RegisterPageState extends State<RegisterPage> {
           );
         });
     try {
-      if (passwordController == confirmPasswordController) {
+      if (passwordController.text == confirmPasswordController.text) {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text,
           password: passwordController.text,
         );
+        //print('done');
       } else {
         passwordNotMatchedMessage();
       }
@@ -164,42 +165,42 @@ class _RegisterPageState extends State<RegisterPage> {
                           color: Colors.grey[400],
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Text(
-                          'Or continue with',
-                          style: TextStyle(color: Colors.grey[700]),
-                        ),
-                      ),
-                      Expanded(
-                        child: Divider(
-                          thickness: 0.5,
-                          color: Colors.grey[400],
-                        ),
-                      ),
+                      // Padding(
+                      //   padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      //   child: Text(
+                      //     'Or continue with',
+                      //     style: TextStyle(color: Colors.grey[700]),
+                      //   ),
+                      // ),
+                      // Expanded(
+                      //   child: Divider(
+                      //     thickness: 0.5,
+                      //     color: Colors.grey[400],
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
 
-                const SizedBox(height: 50),
+                //const SizedBox(height: 50),
 
                 // google + apple sign in buttons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // google button
-                    SquareTile(
-                        onTap: () => AuthService().signInWithGoogle(),
-                        imagePath: 'lib/images/google.png'),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     // google button
+                //     SquareTile(
+                //         onTap: () => AuthService().signInWithGoogle(),
+                //         imagePath: 'lib/images/google.png'),
 
-                    // SizedBox(width: 25),
+                //     // SizedBox(width: 25),
 
-                    // // apple button
-                    // SquareTile(imagePath: 'lib/images/apple.png')
-                  ],
-                ),
+                //     // // apple button
+                //     // SquareTile(imagePath: 'lib/images/apple.png')
+                //   ],
+                // ),
 
-                const SizedBox(height: 50),
+                //const SizedBox(height: 50),
 
                 // not a member? register now
                 Row(

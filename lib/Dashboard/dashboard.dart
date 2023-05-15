@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:puzzler/Authentication/auth_page.dart';
 import 'package:puzzler/Authentication/auth_service.dart';
 import 'package:puzzler/Authentication/login.dart';
+import 'package:puzzler/Dashboard/about.dart';
 import 'package:puzzler/components/constants.dart';
 import 'package:puzzler/components/my_button.dart';
 import 'package:puzzler/components/my_level_button.dart';
@@ -123,7 +124,14 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 const SizedBox(height: 25),
                 MyButton(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => About(),
+                      ),
+                    );
+                  },
                   text: "About",
                 ),
                 const SizedBox(height: 25),

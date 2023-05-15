@@ -1,11 +1,15 @@
 import 'dart:async';
 import 'dart:math';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:puzzler/components/constants.dart';
 import 'package:puzzler/components/my_gpt_tile.dart';
 import 'package:puzzler/components/my_tile.dart';
 import 'package:puzzler/components/update_constants.dart';
 import 'package:puzzler/game/score_display.dart';
+
+import '../Authentication/auth_page.dart';
+import '../Dashboard/about.dart';
 
 class GameModeEasy extends StatefulWidget {
   const GameModeEasy({Key? key}) : super(key: key);
@@ -235,7 +239,91 @@ class _GameModeEasyState extends State<GameModeEasy> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // open drawer
-            myDrawer,
+            Drawer(
+              backgroundColor: Colors.grey[300],
+              elevation: 0,
+              child: Column(
+                children: [
+                  const DrawerHeader(
+                    child: Icon(
+                      Icons.dock,
+                      size: 64,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/dashboard');
+                    },
+                    child: Padding(
+                      padding: tilePadding,
+                      child: ListTile(
+                        leading: const Icon(Icons.home),
+                        title: Text(
+                          'D A S H B O A R D',
+                          style: drawerTextColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/settings');
+                    },
+                    child: Padding(
+                      padding: tilePadding,
+                      child: ListTile(
+                        leading: const Icon(Icons.settings),
+                        title: Text(
+                          'S E T T I N G S',
+                          style: drawerTextColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => About(),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: tilePadding,
+                      child: ListTile(
+                        leading: const Icon(Icons.info),
+                        title: Text(
+                          'A B O U T',
+                          style: drawerTextColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () async {
+                      await FirebaseAuth.instance.signOut();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AuthPage(),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: tilePadding,
+                      child: ListTile(
+                        leading: const Icon(Icons.logout),
+                        title: Text(
+                          'L O G O U T',
+                          style: drawerTextColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
             //
             Expanded(
@@ -320,18 +408,21 @@ class _GameModeEasyState extends State<GameModeEasy> {
                                 borderRadius: BorderRadius.circular(8),
                                 color: Colors.grey[200]),
                             child: Center(
-                              child: Row(
-                                children: [
-                                  const Icon(
-                                    Icons.keyboard_double_arrow_right_rounded,
+                                child: Text(
+                              style: const TextStyle(
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 5.0,
+                                    color: Colors.black,
+                                    offset: Offset(2.0, 2.0),
                                   ),
-                                  Text(
-                                    "${_minute.toString().padLeft(2, '0')} : ${_seconds.toString().padLeft(2, '0')}",
-                                    //style: TextStyle(fontSize: 30),
-                                  )
                                 ],
+                                fontSize: 22,
+                                color: Colors.black,
                               ),
-                            ),
+                              "${_minute.toString().padLeft(2, '0')} : ${_seconds.toString().padLeft(2, '0')}",
+                              //style: TextStyle(fontSize: 30),
+                            )),
                           ),
                         ),
                       ),
@@ -347,17 +438,37 @@ class _GameModeEasyState extends State<GameModeEasy> {
                                   borderRadius: BorderRadius.circular(8),
                                   color: Colors.redAccent),
                               child: Center(
-                                child: Row(
-                                  children: const [
-                                    Icon(
-                                      Icons.keyboard_double_arrow_right_rounded,
-                                    ),
-                                    Text(
-                                      "start/stop button",
-                                      //style: TextStyle(fontSize: 30),
-                                    )
-                                  ],
-                                ),
+                                child: _isRunning == true
+                                    ? const Text(
+                                        style: TextStyle(
+                                          shadows: [
+                                            Shadow(
+                                              blurRadius: 5.0,
+                                              color: Colors.black,
+                                              offset: Offset(2.0, 2.0),
+                                            ),
+                                          ],
+                                          fontSize: 22,
+                                          color: Colors.white,
+                                        ),
+                                        "Submit",
+                                        //style: TextStyle(fontSize: 30),
+                                      )
+                                    : const Text(
+                                        style: TextStyle(
+                                          shadows: [
+                                            Shadow(
+                                              blurRadius: 5.0,
+                                              color: Colors.black,
+                                              offset: Offset(2.0, 2.0),
+                                            ),
+                                          ],
+                                          fontSize: 22,
+                                          color: Colors.white,
+                                        ),
+                                        "Start",
+                                        //style: TextStyle(fontSize: 30),
+                                      ),
                               ),
                             ),
                           ),

@@ -10,3 +10,4 @@ int score = 0;
 String timeFinal = "";
 int hintsUsed = 0;
 int wordhintused = 0;
+int startandstop = 0;

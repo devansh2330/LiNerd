@@ -30,8 +30,14 @@ class _MyTileState extends State<MyTile> {
   @override
   Widget build(BuildContext context) {
     var icon = widget.direction == "ACROSS"
-        ? const Icon(Icons.keyboard_double_arrow_right_rounded)
-        : const Icon(Icons.keyboard_double_arrow_down_rounded);
+        ? const Icon(
+            Icons.keyboard_double_arrow_right_rounded,
+            size: 40,
+          )
+        : const Icon(
+            Icons.keyboard_double_arrow_down_rounded,
+            size: 40,
+          );
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),

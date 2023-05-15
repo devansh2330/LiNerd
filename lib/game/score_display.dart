@@ -1,8 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:puzzler/Dashboard/about.dart';
 import 'package:puzzler/components/constants.dart';
 import 'package:puzzler/components/my_gpt_tile.dart';
 import 'package:puzzler/components/my_score_tile.dart';
 import 'package:puzzler/components/update_constants.dart';
+
+import '../Authentication/auth_page.dart';
 
 class ScoreDisplay extends StatefulWidget {
   final int level;
@@ -44,7 +48,91 @@ class _ScoreDisplayState extends State<ScoreDisplay> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // open drawer
-            myDrawer,
+            Drawer(
+              backgroundColor: Colors.grey[300],
+              elevation: 0,
+              child: Column(
+                children: [
+                  const DrawerHeader(
+                    child: Icon(
+                      Icons.dock,
+                      size: 64,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/dashboard');
+                    },
+                    child: Padding(
+                      padding: tilePadding,
+                      child: ListTile(
+                        leading: const Icon(Icons.home),
+                        title: Text(
+                          'D A S H B O A R D',
+                          style: drawerTextColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/settings');
+                    },
+                    child: Padding(
+                      padding: tilePadding,
+                      child: ListTile(
+                        leading: const Icon(Icons.settings),
+                        title: Text(
+                          'S E T T I N G S',
+                          style: drawerTextColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => About(),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: tilePadding,
+                      child: ListTile(
+                        leading: const Icon(Icons.info),
+                        title: Text(
+                          'A B O U T',
+                          style: drawerTextColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () async {
+                      await FirebaseAuth.instance.signOut();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AuthPage(),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: tilePadding,
+                      child: ListTile(
+                        leading: const Icon(Icons.logout),
+                        title: Text(
+                          'L O G O U T',
+                          style: drawerTextColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
             //
             Expanded(

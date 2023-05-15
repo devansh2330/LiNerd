@@ -22,11 +22,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthPage(),
+      home: const AuthPage(),
       routes: {
         'scoreeasy': (context) => ScoreDisplay(
               level: 0,
             ),
+        '/dashboard': (context) => Dashboard(),
+        '/settings': (context) => Dashboard(),
+        //'/about': (context) => About(),
       },
     );
   }

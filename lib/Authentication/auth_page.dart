@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:puzzler/Authentication/login_or_register.dart';
+import 'package:puzzler/Dashboard/dashboard.dart';
 import 'package:puzzler/game/home_page.dart';
 
 class AuthPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class AuthPage extends StatelessWidget {
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return const HomePage(); //user logged in
+                return Dashboard(); //user logged in
               }
               return LoginOrRegisterPage(); //user not logged in
             }));
