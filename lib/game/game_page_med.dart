@@ -119,6 +119,7 @@ class _GameModeMediumState extends State<GameModeMedium> {
       int maxCommon = -1;
       int maxRowPos = -1;
       int maxColPos = -1;
+      i = i + Random().nextInt(2);
       String maxDirection = "";
       for (int j = 1; j < 9; j++) {
         for (int k = 1; k < 9; k++) {

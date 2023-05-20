@@ -118,6 +118,7 @@ class _GameModeEasyState extends State<GameModeEasy> {
       int maxCommon = -1;
       int maxRowPos = -1;
       int maxColPos = -1;
+      i = i + Random().nextInt(2);
       String maxDirection = "";
       for (int j = 2; j < 8; j++) {
         for (int k = 2; k < 8; k++) {

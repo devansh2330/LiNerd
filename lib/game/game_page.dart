@@ -115,6 +115,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
       int maxCommon = -1;
       int maxRowPos = -1;
       int maxColPos = -1;
+      i = i + Random().nextInt(2);
       String maxDirection = "";
       for (int j = 0; j < 10; j++) {
         for (int k = 0; k < 10; k++) {
