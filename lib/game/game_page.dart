@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:puzzler/Authentication/auth_page.dart';
 import 'package:puzzler/Dashboard/about.dart';
 import 'package:puzzler/components/constants.dart';
-import 'package:puzzler/components/my_gpt_tile.dart';
 import 'package:puzzler/components/my_tile.dart';
 import 'package:puzzler/components/update_constants.dart';
 import 'package:puzzler/game/score_display.dart';

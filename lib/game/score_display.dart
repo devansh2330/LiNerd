@@ -2,10 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:puzzler/Dashboard/about.dart';
 import 'package:puzzler/components/constants.dart';
-import 'package:puzzler/components/my_gpt_tile.dart';
 import 'package:puzzler/components/my_score_tile.dart';
 import 'package:puzzler/components/update_constants.dart';
-
 import '../Authentication/auth_page.dart';
 
 class ScoreDisplay extends StatefulWidget {

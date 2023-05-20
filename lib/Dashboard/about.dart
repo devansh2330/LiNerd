@@ -14,7 +14,7 @@ class About extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Text(
-                'Welcome to My Awesome App!',
+                'Welcome to LiNerd App!',
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
@@ -22,7 +22,7 @@ class About extends StatelessWidget {
               ),
               SizedBox(height: 16.0),
               Text(
-                'This app is designed to do some really cool things that will make your life easier and more enjoyable. We hope you love using it as much as we loved creating it!',
+                'This app is a Crossword tool to help you learn the linux commands for better grip over them through an enjoyable way. We hope you love using it as much as we loved creating it!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16.0,

@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:puzzler/Authentication/auth_service.dart';
 import 'package:puzzler/components/my_button.dart';
-import 'package:puzzler/components/my_square_tile.dart';
 import 'package:puzzler/components/my_textfield.dart';
 
 class LoginPage extends StatefulWidget {

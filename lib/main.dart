@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:puzzler/Dashboard/dashboard.dart';
-import 'package:puzzler/game/game_tile.dart';
-import 'package:puzzler/game/game_page.dart';
 import 'package:puzzler/game/score_display.dart';
 import 'Authentication/auth_page.dart';
 import 'firebase_options.dart';

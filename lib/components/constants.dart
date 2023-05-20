@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:puzzler/Dashboard/dashboard.dart';
 
 var defaultBackgroundColor = Colors.grey[300];
 var appBarColor = Colors.grey[900];

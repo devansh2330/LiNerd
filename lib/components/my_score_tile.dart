@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:puzzler/game/game_page.dart';
 
 class MySTile extends StatefulWidget {
   final String word;
