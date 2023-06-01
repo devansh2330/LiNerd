@@ -16,11 +16,16 @@ class _ProfileState extends State<Profile> {
   // text editing controllers
   final nameController = TextEditingController();
   final rollNumberController = TextEditingController();
+  final user = FirebaseAuth.instance.currentUser!;
+
+  //id
+  List<String> userCredentials = [];
 
   void updateCredentials(String name, String rollNumber) async {
     await FirebaseFirestore.instance.collection('user_profile_data').add({
       'Name': name,
       'Roll Number': rollNumber,
+      'Email': user,
     });
   }
 

@@ -121,30 +121,30 @@ class _DashboardState extends State<Dashboard> {
                       },
                     ),
                     const SizedBox(height: 25),
-                    MyButton(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Profile(),
-                          ),
-                        );
-                      },
-                      text: "Profile",
-                    ),
-                    const SizedBox(height: 25),
-                    MyButton(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Profile(),
-                          ),
-                        );
-                      },
-                      text: "Scoreboard",
-                    ),
-                    const SizedBox(height: 25),
+                    // MyButton(
+                    //   onTap: () {
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //         builder: (context) => Profile(),
+                    //       ),
+                    //     );
+                    //   },
+                    //   text: "Profile",
+                    // ),
+                    // const SizedBox(height: 25),
+                    // MyButton(
+                    //   onTap: () {
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //         builder: (context) => Profile(),
+                    //       ),
+                    //     );
+                    //   },
+                    //   text: "Scoreboard",
+                    // ),
+                    // const SizedBox(height: 25),
                     MyButton(
                       onTap: () {
                         Navigator.push(
